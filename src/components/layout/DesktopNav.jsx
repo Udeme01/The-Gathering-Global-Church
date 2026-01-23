@@ -4,7 +4,7 @@ import { NavLink } from "react-router";
 
 const DesktopNav = () => {
   return (
-    <nav className="hidden md:flex md:items-center md:justify-center">
+    <nav className="hidden lg:flex md:items-center md:justify-center">
       <ul className="flex items-center justify-between gap-10">
         {navigations.map((navigation) => {
           const { anchorName, anchorLink } = navigation;
