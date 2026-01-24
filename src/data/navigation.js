@@ -6,21 +6,37 @@ export const navigations = [
   {
     anchorName: "About",
     anchorLink: "/about",
+    nested: [
+      {
+        nestedName: "Our Tenets",
+        nestedLink: "#",
+      },
+    ],
   },
   {
-    anchorName: "Blog",
-    anchorLink: "/blog",
+    anchorName: "Connect",
+    anchorLink: "/connect",
+    nested: [
+      {
+        nestedName: "Become a Member",
+        nestedLink: "#",
+      },
+    ],
   },
   {
-    anchorName: "Sermon",
-    anchorLink: "/sermon",
+    anchorName: "Media",
+    anchorLink: "/media",
+  },
+  {
+    anchorName: "Resources",
+    anchorLink: "/resources",
   },
   {
     anchorName: "Contact",
     anchorLink: "/contact",
   },
   {
-    anchorName: "Partnership",
-    anchorLink: "/partnership",
+    anchorName: "Give",
+    anchorLink: "/give",
   },
 ];

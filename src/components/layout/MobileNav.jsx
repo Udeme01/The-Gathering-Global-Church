@@ -20,13 +20,6 @@ const MobileNav = ({ isOpen }) => {
 
   return (
     <>
-      {/* Backdrop with blur */}
-      {/* <div
-        className={`md:hidden fixed inset-0 bg-black/50 backdrop-blur-sm transition-opacity duration-500 ${
-          isOpen ? "opacity-100" : "opacity-0 pointer-events-none"
-        }`}
-        style={{ zIndex: 39 }}
-      /> */}
       <section
         className={`lg:hidden bg-black text-white fixed top-0 bottom-0 left-0 right-0 transition-transform duration-500 ease-in-out z-40 overflow-y-auto ${isOpen ? "translate-x-0" : "translate-x-full"}`}
       >
@@ -38,7 +31,7 @@ const MobileNav = ({ isOpen }) => {
             />
           </div>
           {/* mobile navigation */}
-          <nav className="mt-10">
+          <nav className="mt-">
             <ul className="text-3xl flex flex-col gap-6">
               {navigations.map((navigation) => {
                 const { anchorName, anchorLink } = navigation;
@@ -55,6 +48,7 @@ const MobileNav = ({ isOpen }) => {
                           : ""
                       }
                     >
+                      {}
                       {anchorName}
                     </NavLink>
                   </li>
