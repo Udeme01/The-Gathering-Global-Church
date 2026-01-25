@@ -9,7 +9,23 @@ export const navigations = [
     nested: [
       {
         nestedName: "Our Tenets",
-        nestedLink: "#",
+        nestedLink: "/about/tenets",
+      },
+      {
+        nestedName: "Our History",
+        nestedLink: "/about/history",
+      },
+      {
+        nestedName: "Our Belief",
+        nestedLink: "/about/belief",
+      },
+      {
+        nestedName: "Our Values",
+        nestedLink: "/about/values",
+      },
+      {
+        nestedName: "Church Leadership",
+        nestedLink: "/about/leadership",
       },
     ],
   },
@@ -19,17 +35,65 @@ export const navigations = [
     nested: [
       {
         nestedName: "Become a Member",
-        nestedLink: "#",
+        nestedLink: "/connect/membership",
+      },
+      {
+        nestedName: "First Timer",
+        nestedLink: "/connect/first-timer",
+      },
+      {
+        nestedName: "Prayer Request",
+        nestedLink: "/connect/prayer-request",
       },
     ],
   },
   {
     anchorName: "Media",
     anchorLink: "/media",
+    nested: [
+      {
+        nestedName: "Sermons",
+        nestedLink: "/media/sermons",
+      },
+      {
+        nestedName: "Watch Live",
+        nestedLink: "/media/watch-live",
+      },
+      {
+        nestedName: "Music",
+        nestedLink: "/media/music",
+      },
+      {
+        nestedName: "Articles",
+        nestedLink: "/media/articles",
+      },
+    ],
   },
   {
     anchorName: "Resources",
     anchorLink: "/resources",
+    nested: [
+      {
+        nestedName: "Devotionals",
+        nestedLink: "/resources/devotionals",
+      },
+      {
+        nestedName: "Confessions",
+        nestedLink: "/resources/confessions",
+      },
+      {
+        nestedName: "Books",
+        nestedLink: "/resources/books",
+      },
+      {
+        nestedName: "Discipleship",
+        nestedLink: "/resources/discipleship",
+      },
+      {
+        nestedName: "Membership",
+        nestedLink: "/resources/membership",
+      },
+    ],
   },
   {
     anchorName: "Contact",
