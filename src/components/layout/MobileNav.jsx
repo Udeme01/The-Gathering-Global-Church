@@ -1,15 +1,19 @@
-import React, { useEffect } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import { navigations } from "../../data/navigation";
 import { NavLink } from "react-router";
 import { socialHandles } from "../../data/socialsHandles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
 const MobileNav = ({ isOpen }) => {
+  const [openDropdown, setOpenDropdown] = useState(null);
+
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "unset";
+      setOpenDropdown(null);
     }
 
     // Cleanup function to reset overflow when component unmounts
@@ -17,6 +21,10 @@ const MobileNav = ({ isOpen }) => {
       document.body.style.overflow = "unset";
     };
   }, [isOpen]);
+
+  const toggleDropdown = (anchorName) => {
+    setOpenDropdown(openDropdown === anchorName ? null : anchorName);
+  };
 
   return (
     <>
@@ -32,26 +40,62 @@ const MobileNav = ({ isOpen }) => {
           </div>
           {/* mobile navigation */}
           <nav className="mt-">
-            <ul className="text-3xl flex flex-col gap-6">
+            <ul className="text-3xl flex flex-col">
               {navigations.map((navigation) => {
-                const { anchorName, anchorLink } = navigation;
+                const { anchorName, anchorLink, nested } = navigation;
+                const hasNested = nested && nested.length > 0;
+                const isDropdownOpen = openDropdown === anchorName;
                 return (
-                  <li
-                    key={anchorName}
-                    className="hover:text-purple-800 font-medium"
-                  >
-                    <NavLink
-                      to={anchorLink}
-                      className={({ isActive }) =>
-                        isActive
-                          ? "text-purple-800 underline underline-offset-4"
-                          : ""
-                      }
-                    >
-                      {}
-                      {anchorName}
-                    </NavLink>
-                  </li>
+                  <Fragment key={anchorName}>
+                    <li className="hover:text-white/60 font-medium flex items-center gap-2 mb-6 mt-2 first:mt-0 w-fit">
+                      {hasNested ? (
+                        <button
+                          onClick={() => toggleDropdown(anchorName)}
+                          className={`flex w-60 items-center justify-between text-[25px]`}
+                        >
+                          <span className="cursor-text">{anchorName}</span>
+                          <FontAwesomeIcon
+                            icon={faChevronRight}
+                            size="xs"
+                            className={`transition-transform duration-500 ease-in-out ${isDropdownOpen ? "rotate-90" : "rotate-0"}`}
+                          />
+                        </button>
+                      ) : (
+                        <NavLink
+                          to={anchorLink}
+                          className={({ isActive }) =>
+                            `flex w-fit items-center gap-2 text-[25px] ${
+                              isActive ? "text-white" : ""
+                            }`
+                          }
+                        >
+                          {anchorName}
+                        </NavLink>
+                      )}
+                    </li>
+
+                    {hasNested && (
+                      <div
+                        className={`overflow-hidden transition-all duration-500 ease-in-out mb-1 ${isDropdownOpen ? "max-h-96 opacity-100 translate-y-0" : "max-h-0 opacity- -translate-y-2"}`}
+                      >
+                        {nested.map((item) => (
+                          <li
+                            key={item.nestedName}
+                            className={`pl-6 text-2xl hover:text-purple-300 mb-5 w-fit`}
+                          >
+                            <NavLink
+                              to={item.nestedLink}
+                              className={({ isActive }) =>
+                                `text-[20px]${isActive ? "text-white" : ""}`
+                              }
+                            >
+                              {item.nestedName}
+                            </NavLink>
+                          </li>
+                        ))}
+                      </div>
+                    )}
+                  </Fragment>
                 );
               })}
             </ul>
@@ -92,7 +136,7 @@ const MobileNav = ({ isOpen }) => {
                     href={socialHandle.href}
                     target={socialHandle.target}
                     rel={socialHandle.rel}
-                    className="bg-purple-900/50 hover:bg-purple-800 rounded-full transition-colors p-3"
+                    className="bg-purple-900/50 hover:bg-purple-800 rounded-full transition-all duration-500 ease-in-out hover:scale-110 p-3"
                     aria-label={socialHandle.ariaLabel}
                   >
                     <FontAwesomeIcon icon={socialHandle.icon} size="lg" />
