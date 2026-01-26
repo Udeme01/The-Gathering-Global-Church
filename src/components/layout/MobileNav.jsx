@@ -51,7 +51,7 @@ const MobileNav = ({ isOpen }) => {
                       {hasNested ? (
                         <button
                           onClick={() => toggleDropdown(anchorName)}
-                          className={`flex w-60 items-center justify-between text-[25px]`}
+                          className={`flex w-60 items-center justify-between text-[20px]`}
                         >
                           <span className="cursor-text">{anchorName}</span>
                           <FontAwesomeIcon
@@ -64,7 +64,7 @@ const MobileNav = ({ isOpen }) => {
                         <NavLink
                           to={anchorLink}
                           className={({ isActive }) =>
-                            `flex w-fit items-center gap-2 text-[25px] ${
+                            `flex w-fit items-center gap-2 text-[20px] ${
                               isActive ? "text-white" : ""
                             }`
                           }
@@ -86,7 +86,7 @@ const MobileNav = ({ isOpen }) => {
                             <NavLink
                               to={item.nestedLink}
                               className={({ isActive }) =>
-                                `text-[20px]${isActive ? "text-white" : ""}`
+                                `text-[18px] ${isActive ? "text-white" : ""}`
                               }
                             >
                               {item.nestedName}
@@ -125,7 +125,7 @@ const MobileNav = ({ isOpen }) => {
 
           {/* socials */}
           <section className="mt-10 pb-8">
-            <h2 className="text-xl font-semibold mb-4 text-purple-300">
+            <h2 className="text-lg font-semibold mb-4 text-purple-300">
               Connect With Us
             </h2>
             <div className="flex gap-2 justify-center">
