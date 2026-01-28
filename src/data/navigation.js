@@ -1,8 +1,8 @@
 export const navigations = [
-  {
-    anchorName: "Home",
-    anchorLink: "/",
-  },
+  // {
+  //   anchorName: "Home",
+  //   anchorLink: "/",
+  // },
   {
     anchorName: "About",
     anchorLink: "/about",

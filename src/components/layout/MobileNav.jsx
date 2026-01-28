@@ -32,12 +32,12 @@ const MobileNav = ({ isOpen }) => {
         className={`lg:hidden bg-black text-white fixed top-0 bottom-0 left-0 right-0 transition-transform duration-500 ease-in-out z-40 overflow-y-auto ${isOpen ? "translate-x-0" : "translate-x-full"}`}
       >
         <section className="w-[90%] sm:w-[85%] mx-auto">
-          <div className="py-8.5 w-fit ">
+          <NavLink to={`/`} className="inline-block py-8.5 w-fit ">
             <img
               src="/images/tggc_logo.webp"
               alt="the gathering global church logo"
             />
-          </div>
+          </NavLink>
           {/* mobile navigation */}
           <nav className="mt-">
             <ul className="text-3xl flex flex-col">
@@ -76,7 +76,7 @@ const MobileNav = ({ isOpen }) => {
 
                     {hasNested && (
                       <div
-                        className={`overflow-hidden transition-all duration-500 ease-in-out mb-1 ${isDropdownOpen ? "max-h-96 opacity-100 translate-y-0" : "max-h-0 opacity- -translate-y-2"}`}
+                        className={`overflow-hidden transition-all duration-500 ease-in-out mb-1 ${isDropdownOpen ? "max-h-96 opacity-100 translate-y-0" : "max-h-0 opacity-0 -translate-y-2"}`}
                       >
                         {nested.map((item) => (
                           <li
