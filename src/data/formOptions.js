@@ -16,6 +16,9 @@ export const validationSchema = Yup.object({
   maritalStatus: Yup.string().required("Marital status is required"),
   employmentStatus: Yup.string().required("Employment status is required"),
   completedMembershipClass: Yup.string().required("This field is required"),
+  hearAboutTGGC: Yup.string().required("This field is required"),
+  preferredTimeOfCall: Yup.string().required("This field is required"),
+  prayerRequest: Yup.string(),
   profession: Yup.string(),
   interests: Yup.string(),
   otherInterests: Yup.string(),
@@ -90,4 +93,43 @@ export const campusOptions = [
   { value: "lagos-island", label: "Lagos - Island" },
   { value: "abuja", label: "Abuja" },
   { value: "portharcourt", label: "Port Harcourt" },
+];
+
+export const hearAboutTGGCOptions = [
+  {
+    value: "family_member",
+    label: "Family Member",
+  },
+  {
+    value: "social_media",
+    label: "Social Media",
+  },
+  {
+    value: "colleague_at_work",
+    label: "Colleague at work",
+  },
+  {
+    value: "friend",
+    label: "Friend",
+  },
+  {
+    value: "flyer",
+    label: "Flyer / Poster",
+  },
+  {
+    value: "website",
+    label: "Church Website",
+  },
+  {
+    value: "other",
+    label: "Other",
+  },
+];
+export const preferredTimeOfCallOptions = [
+  { value: "", label: "Select time" },
+  { value: "anytime", label: "Anytime" },
+  { value: "8am - 11:59am", label: "8am - 11:59am" },
+  { value: "12noon - 3pm", label: "12noon - 3pm" },
+  { value: "3pm - 6pm", label: "3pm - 6pm" },
+  { value: "6pm - 8pm", label: "6pm - 8pm" },
 ];

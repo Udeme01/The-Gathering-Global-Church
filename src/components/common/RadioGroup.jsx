@@ -17,7 +17,7 @@ const RadioGroup = ({ label, name, options, required = false }) => {
               type="radio"
               name={name}
               value={option.value}
-              className="w-5 h-5 text-red-600 border-neutral-300 focus:ring-red-600 focus:ring-2 cursor-pointer"
+              className="w-5 h-5 text-purple-600 border-neutral-300 focus:ring-purple-600 focus:ring-2 cursor-pointer"
             />
             <span className="text-neutral-900 group-hover:text-neutral-700 transition-colors">
               {option.label}

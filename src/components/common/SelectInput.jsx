@@ -15,7 +15,7 @@ const SelectInput = ({ label, name, options, required = false }) => {
           as="select"
           id={name}
           name={name}
-          className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-red-600 focus:border-transparent transition-all duration-200 outline-none appearance-none bg-white cursor-pointer"
+          className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent transition-all duration-200 outline-none appearance-none bg-white cursor-pointer"
         >
           {options.map((option) => (
             <option key={option.value} value={option.value}>

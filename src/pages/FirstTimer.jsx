@@ -6,14 +6,12 @@ import SelectInput from "../components/common/SelectInput";
 import RadioGroup from "../components/common/RadioGroup";
 import PhoneInput from "../components/common/PhoneInput";
 
-// validation schema
-import { validationSchema } from "../data/formOptions";
-
-// form options import
+// validation schema && form options import
 import {
   ageDemographyOptions,
-  maritalStatusOptions,
-  employmentStatusOptions,
+  hearAboutTGGCOptions,
+  preferredTimeOfCallOptions,
+  validationSchema,
 } from "../data/formOptions";
 
 const FirstTimer = () => {
@@ -26,16 +24,10 @@ const FirstTimer = () => {
     city: "",
     stateProvince: "",
     birthday: "",
-    ageDemography: "",
     gender: "",
-    maritalStatus: "",
-    employmentStatus: "",
-    completedMembershipClass: "",
-    profession: "",
-    emergencyContactFirstName: "",
-    emergencyContactLastName: "",
-    emergencyContactEmail: "",
-    emergencyContactPhone: "",
+    hearAboutTGGC: "",
+    preferredTimeOfCall: "",
+    PrayerRequest: "",
   };
 
   const handleSubmit = (values, { setSubmitting }) => {
@@ -114,31 +106,21 @@ const FirstTimer = () => {
                     required
                   />
 
-                  <SelectInput
-                    label="Marital Status"
-                    name="maritalStatus"
-                    options={maritalStatusOptions}
-                    required
-                  />
-
-                  <SelectInput
-                    label="Employment Status"
-                    name="employmentStatus"
-                    options={employmentStatusOptions}
-                    required
-                  />
-
                   <RadioGroup
-                    label="Have you completed Membership Class?"
-                    name="completedMembershipClass"
-                    options={[
-                      { value: "yes", label: "Yes" },
-                      { value: "no", label: "No" },
-                    ]}
+                    label="How did you hear about TGGC?"
+                    name="hearAboutTGGC?"
+                    options={hearAboutTGGCOptions}
                     required
                   />
+                  <TextInput name="other" placeholder="Other" />
 
-                  <TextInput label="Profession" name="profession" />
+                  <SelectInput
+                    label="Preferred time of Call (when would you be available to receive calls?)"
+                    name="preferredTimeOfCall"
+                    options={preferredTimeOfCallOptions}
+                    required
+                  />
+                  {/* <textarea label="Prayer Request" name="prayerRequest" /> */}
                 </div>
 
                 {/* Emergency Contact Section */}
