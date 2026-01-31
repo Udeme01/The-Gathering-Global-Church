@@ -47,32 +47,33 @@ const Footer = () => {
               className="w-36 h-auto"
             />
           </div>
-          <h1 className="capitalize text-xl">
+          <h1 className="capitalize text-xl sm:text-2xl mt-3">
             in faith, by faith. <span>in the spirit, by the spirit.</span>
           </h1>
         </section>
         {/* footer links */}
 
-        <nav>
-          <ul className="my-6 grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <nav className="my-12 md:my-16">
+          <ul className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-6 items-start justify-center">
             {navigations.map((navigation) => {
               const { anchorName, anchorLink, nested } = navigation;
               const hasNested = nested && nested.length > 0;
+              if (!hasNested) return null;
               return (
                 <li key={anchorName} className="leading-12">
                   {hasNested && (
                     <>
-                      <button className="text-xl text-white/60 mb-2">
+                      <h2 className="text-xl text-white/60 mb-2">
                         {anchorName}
-                      </button>
-                      <ul className="space-y-3">
+                      </h2>
+                      <ul className="space-y-4 w-fit">
                         {nested.map((nest) => {
                           const { nestedLink, nestedName } = nest;
                           return (
-                            <li key={nestedLink}>
+                            <li key={nestedLink} className="w-fit">
                               <NavLink
                                 to={nestedLink}
-                                className="text-sm ml-4 hover:text-purple-300 block"
+                                className="text-sm ml-4 hover:text-purple-300 block w-fit"
                               >
                                 {nestedName}
                               </NavLink>
@@ -89,7 +90,7 @@ const Footer = () => {
         </nav>
 
         {/* Bottom Bar */}
-        <section className="w-full mt-6 pt-4 border-t border-neutral-white/5 flex flex-col items-center justify-center md:mt-12">
+        <section className="w-full pt-4 border-t border-neutral-white/5 flex flex-col items-center justify-center">
           {/* social handles */}
           <section className="flex justify-between gap-4 py-3">
             {socialHandles.map((socialHandle) => {

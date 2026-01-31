@@ -1,11 +1,11 @@
 import React from "react";
 
-const Contact = () => {
+const Confessions = () => {
   return (
     <div className="h-screen flex items-center justify-center text-3xl">
-      <h1>Contact</h1>
+      <h1>Confessions</h1>
     </div>
   );
 };
 
-export default Contact;
+export default Confessions;

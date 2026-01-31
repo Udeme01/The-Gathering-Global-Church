@@ -4,30 +4,34 @@ export const navigations = [
   //   anchorLink: "/",
   // },
   {
-    anchorName: "About",
+    anchorName: "About Us",
     anchorLink: "/about",
-    nested: [
-      {
-        nestedName: "Our Tenets",
-        nestedLink: "/about/tenets",
-      },
-      {
-        nestedName: "Our History",
-        nestedLink: "/about/history",
-      },
-      {
-        nestedName: "Our Belief",
-        nestedLink: "/about/belief",
-      },
-      {
-        nestedName: "Our Values",
-        nestedLink: "/about/values",
-      },
-      {
-        nestedName: "Church Leadership",
-        nestedLink: "/about/leadership",
-      },
-    ],
+    // nested: [
+    //   {
+    //     nestedName: "About Us",
+    //     nestedLink: "/about",
+    //   },
+    //   {
+    //     nestedName: "Our Tenets",
+    //     nestedLink: "/about/tenets",
+    //   },
+    //   {
+    //     nestedName: "Our History",
+    //     nestedLink: "/about/history",
+    //   },
+    //   {
+    //     nestedName: "Our Belief",
+    //     nestedLink: "/about/belief",
+    //   },
+    //   {
+    //     nestedName: "Our Values",
+    //     nestedLink: "/about/values",
+    //   },
+    //   {
+    //     nestedName: "Church Leadership",
+    //     nestedLink: "/about/leadership",
+    //   },
+    // ],
   },
   {
     anchorName: "Connect",
@@ -59,13 +63,13 @@ export const navigations = [
         nestedName: "Watch Live",
         nestedLink: "/media/watch-live",
       },
+      // {
+      //   nestedName: "Music",
+      //   nestedLink: "/media/music",
+      // },
       {
-        nestedName: "Music",
-        nestedLink: "/media/music",
-      },
-      {
-        nestedName: "Articles",
-        nestedLink: "/media/articles",
+        nestedName: "Article",
+        nestedLink: "/media/article",
       },
     ],
   },
@@ -89,10 +93,10 @@ export const navigations = [
         nestedName: "Discipleship",
         nestedLink: "/resources/discipleship",
       },
-      {
-        nestedName: "Membership",
-        nestedLink: "/resources/membership",
-      },
+      // {
+      //   nestedName: "Membership",
+      //   nestedLink: "/resources/membership",
+      // },
     ],
   },
   {

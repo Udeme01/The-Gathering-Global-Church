@@ -15,7 +15,7 @@ const DesktopNav = () => {
   };
 
   return (
-    <nav className="hidden lg:flex md:items-center md:justify-center relative">
+    <nav className="hidden lg:flex md:items-center md:justify-center">
       <ul className="flex items-center justify-between gap-10">
         {navigations.map((navigation) => {
           const { anchorName, anchorLink, nested } = navigation;
@@ -44,7 +44,7 @@ const DesktopNav = () => {
               </li>
               {hasNested && (
                 <section
-                  className={`fixed top-1/9 text-sm bg-black p-6 rounded-2xl border w-fit h-auto flex items-center justify-center gap-10 transition-all duration-500 ease-in-out ${isDropdownOpen ? "max-h-12 opacity-100 translate-y-0" : "max-h-0 opacity-0 translate-y-full"}`}
+                  className={`absolute top-1/9 text-sm bg-black p-6 mt-1 rounded w-fit h-auto flex items-center justify-center gap-10 transition-all duration-500 ease-in-out ${isDropdownOpen ? "max-h-full opacity-100 translate-y-0" : "max-h-0 opacity-0 translate-y-full"}`}
                 >
                   {nested.map((nestedItem) => {
                     return (
