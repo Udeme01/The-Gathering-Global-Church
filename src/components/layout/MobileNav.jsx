@@ -5,7 +5,7 @@ import { socialHandles } from "../../data/socialsHandles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
-const MobileNav = ({ isOpen }) => {
+const MobileNav = ({ isOpen, isClose }) => {
   const [openDropdown, setOpenDropdown] = useState(null);
 
   useEffect(() => {
@@ -26,13 +26,23 @@ const MobileNav = ({ isOpen }) => {
     setOpenDropdown(openDropdown === anchorName ? null : anchorName);
   };
 
+  const handleOnClose = () => {
+    if (isClose) {
+      isClose();
+    }
+  };
+
   return (
     <>
       <section
         className={`lg:hidden bg-black text-white fixed top-0 bottom-0 left-0 right-0 transition-transform duration-500 ease-in-out z-40 overflow-y-auto ${isOpen ? "translate-x-0" : "translate-x-full"}`}
       >
         <section className="w-[90%] sm:w-[85%] mx-auto">
-          <NavLink to={`/`} className="inline-block py-8.5 w-fit ">
+          <NavLink
+            to={`/`}
+            onClick={handleOnClose}
+            className="inline-block py-8.5 w-fit"
+          >
             <img
               src="/images/tggc_logo.webp"
               alt="the gathering global church logo"
@@ -63,6 +73,7 @@ const MobileNav = ({ isOpen }) => {
                       ) : (
                         <NavLink
                           to={anchorLink}
+                          onClick={handleOnClose}
                           className={({ isActive }) =>
                             `flex w-fit items-center gap-2 text-[20px] ${
                               isActive ? "text-white" : ""
@@ -85,6 +96,7 @@ const MobileNav = ({ isOpen }) => {
                           >
                             <NavLink
                               to={item.nestedLink}
+                              onClick={handleOnClose}
                               className={({ isActive }) =>
                                 `text-[18px] ${isActive ? "text-white" : ""}`
                               }
