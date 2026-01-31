@@ -1,3 +1,40 @@
+import * as Yup from "yup";
+
+export const validationSchema = Yup.object({
+  firstName: Yup.string().required("First name is required"),
+  lastName: Yup.string().required("Last name is required"),
+  email: Yup.string()
+    .email("Invalid email address")
+    .required("Email is required"),
+  phone: Yup.string().required("Phone number is required"),
+  location: Yup.string().required("Location is required"),
+  city: Yup.string().required("City is required"),
+  stateProvince: Yup.string().required("State/Province is required"),
+  birthday: Yup.date().required("Birthday is required"),
+  ageDemography: Yup.string().required("Age demography is required"),
+  gender: Yup.string().required("Gender is required"),
+  maritalStatus: Yup.string().required("Marital status is required"),
+  employmentStatus: Yup.string().required("Employment status is required"),
+  completedMembershipClass: Yup.string().required("This field is required"),
+  profession: Yup.string(),
+  interests: Yup.string(),
+  otherInterests: Yup.string(),
+  serviceUnit: Yup.string().required("Service unit is required"),
+  campusAttended: Yup.string().required("Campus attended is required"),
+  emergencyContactFirstName: Yup.string().required(
+    "Emergency contact first name is required",
+  ),
+  emergencyContactLastName: Yup.string().required(
+    "Emergency contact last name is required",
+  ),
+  emergencyContactEmail: Yup.string()
+    .email("Invalid email address")
+    .required("Emergency contact email is required"),
+  emergencyContactPhone: Yup.string().required(
+    "Emergency contact phone is required",
+  ),
+});
+
 export const ageDemographyOptions = [
   { value: "", label: "Select age demography" },
   { value: "under18", label: "Under 18" },

@@ -3,7 +3,7 @@ import React from "react";
 const FormHeader = ({ title, subtitle, className = "" }) => {
   return (
     <div
-      className={`relative bg-black text-white flex flex-col items-center justify-center text-center h-[40vh] md:h-[70vh] px-4 ${className}`}
+      className={`relative bg-black text-white flex flex-col justify-center items-center text-center h-[70vh] lg:h-[80vh] px-4 pt-32 ${className}`}
     >
       <div className="max-w-7xl mx-auto text-center">
         {subtitle && (
@@ -11,15 +11,11 @@ const FormHeader = ({ title, subtitle, className = "" }) => {
             {subtitle}
           </p>
         )}
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold">
+        <h1 className="text-xl font-bold">
           {title.split(" ").map((word, index) => (
             <span
               key={index}
-              className={
-                index === title.split(" ").length - 1
-                  ? ""
-                  : "text-purple-600"
-              }
+              className={index === title.split(" ").length - 1 ? "" : ""}
             >
               {word}{" "}
             </span>

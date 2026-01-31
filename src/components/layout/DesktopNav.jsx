@@ -55,7 +55,7 @@ const DesktopNav = () => {
               </li>
               {hasNested && (
                 <section
-                  className={`absolute z-100 top-1/9 text-sm bg-purple-950 text-white p-6 mt-1 rounded w-fit h-auto flex items-center justify-center gap-10 transition-all duration-500 ease-in-out ${isDropdownOpen ? "max-h-full opacity-100 translate-y-0" : "max-h-0 opacity-0 translate-y-full"}`}
+                  className={`absolute z-100 -bottom-20 text-sm bg-purple-950 text-white p-6 mt-1 rounded w-fit h-auto flex items-center justify-center gap-10 transition-all duration-500 ease-in-out ${isDropdownOpen ? "max-h-full opacity-100 translate-y-0" : "max-h-0 opacity-0 translate-y-full"}`}
                 >
                   {nested.map((nestedItem) => {
                     const { nestedName, nestedLink } = nestedItem;
