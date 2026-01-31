@@ -5,6 +5,7 @@ import TextInput from "../components/common/TextInput";
 import SelectInput from "../components/common/SelectInput";
 import RadioGroup from "../components/common/RadioGroup";
 import PhoneInput from "../components/common/PhoneInput";
+import TextArea from "../components/common/TextArea";
 
 // validation schema && form options import
 import {
@@ -27,7 +28,7 @@ const FirstTimer = () => {
     gender: "",
     hearAboutTGGC: "",
     preferredTimeOfCall: "",
-    PrayerRequest: "",
+    prayerRequest: "",
   };
 
   const handleSubmit = (values, { setSubmitting }) => {
@@ -120,7 +121,14 @@ const FirstTimer = () => {
                     options={preferredTimeOfCallOptions}
                     required
                   />
-                  {/* <textarea label="Prayer Request" name="prayerRequest" /> */}
+                  <TextArea
+                    label="Prayer Request"
+                    name="prayerRequest"
+                    type="textarea"
+                    rows={10}
+                    cols={50}
+                    placeholder="Enter your prayer request..."
+                  />
                 </div>
 
                 {/* Emergency Contact Section */}
