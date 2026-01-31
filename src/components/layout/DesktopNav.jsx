@@ -1,6 +1,6 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useState, useEffect } from "react";
 import { navigations } from "../../data/navigation";
-import { NavLink } from "react-router";
+import { NavLink, useLocation } from "react-router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faChevronDown,
@@ -9,6 +9,15 @@ import {
 
 const DesktopNav = () => {
   const [openDropdown, setOpenDropdown] = useState(null);
+  const location = useLocation();
+
+  useEffect(() => {
+    setOpenDropdown(null);
+  }, [location.pathname]);
+
+  const handleCloseDesktopNav = () => {
+    setOpenDropdown(null);
+  };
 
   const toggleDropdown = (anchorName) => {
     setOpenDropdown(openDropdown === anchorName ? null : anchorName);
@@ -39,18 +48,24 @@ const DesktopNav = () => {
                     </span>
                   </button>
                 ) : (
-                  <NavLink to={anchorLink}>{anchorName}</NavLink>
+                  <NavLink to={anchorLink} onClick={handleCloseDesktopNav}>
+                    {anchorName}
+                  </NavLink>
                 )}
               </li>
               {hasNested && (
                 <section
-                  className={`absolute top-1/9 text-sm bg-black p-6 mt-1 rounded w-fit h-auto flex items-center justify-center gap-10 transition-all duration-500 ease-in-out ${isDropdownOpen ? "max-h-full opacity-100 translate-y-0" : "max-h-0 opacity-0 translate-y-full"}`}
+                  className={`absolute z-100 top-1/9 text-sm bg-purple-950 text-white p-6 mt-1 rounded w-fit h-auto flex items-center justify-center gap-10 transition-all duration-500 ease-in-out ${isDropdownOpen ? "max-h-full opacity-100 translate-y-0" : "max-h-0 opacity-0 translate-y-full"}`}
                 >
                   {nested.map((nestedItem) => {
+                    const { nestedName, nestedLink } = nestedItem;
                     return (
-                      <li>
-                        <NavLink to={nestedItem.nestedLink}>
-                          {nestedItem.nestedName}
+                      <li key={nestedName}>
+                        <NavLink
+                          to={nestedLink}
+                          onClick={handleCloseDesktopNav}
+                        >
+                          {nestedName}
                         </NavLink>
                       </li>
                     );
