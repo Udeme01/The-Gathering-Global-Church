@@ -1,6 +1,6 @@
 import React from "react";
 
-const FormHeader = ({ title, subtitle, className = "" }) => {
+const FormHeader = ({ title, subtitle, xtraTitle, className = "" }) => {
   return (
     <div
       className={`relative bg-black text-white flex flex-col justify-center items-center text-center h-[70vh] lg:h-[80vh] px-4 pt-32 ${className}`}
@@ -21,6 +21,9 @@ const FormHeader = ({ title, subtitle, className = "" }) => {
             </span>
           ))}
         </h1>
+        <p className="text-white/60 mt-4 text-[14px] tracking-wide">
+          {xtraTitle}
+        </p>
       </div>
     </div>
   );

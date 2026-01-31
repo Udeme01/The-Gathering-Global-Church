@@ -45,6 +45,7 @@ const FirstTimer = () => {
       <FormHeader
         title="WELCOME TO THE GATHERING GLOBAL CHURCH"
         subtitle="FORMS"
+        xtraTitle="Fill the form below to help us get to know you better…📝"
       />
 
       <div className="max-w-3xl mx-auto -mt-24 pb-24 relative">
