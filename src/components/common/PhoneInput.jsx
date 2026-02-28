@@ -1,14 +1,15 @@
 import React from "react";
 import { Field, ErrorMessage } from "formik";
 
-const PhoneInput = ({ label, name, required = false }) => {
+const PhoneInput = ({ label, id, name, type, required = false }) => {
+  const inputId = id || name;
   return (
     <div className="space-y-2">
       <label
-        htmlFor={name}
+        htmlFor={inputId}
         className="block text-sm font-semibold text-neutral-900"
       >
-        {label} {required && <span className="text-red-600">*</span>}
+        {label} {required && <span className="text-purple-600">*</span>}
       </label>
       <div className="flex items-center gap-2">
         <div className="flex items-center gap-2 px-4 py-3 border border-neutral-300 rounded-lg bg-neutral-50">
@@ -16,9 +17,9 @@ const PhoneInput = ({ label, name, required = false }) => {
           <span className="text-neutral-700">+234</span>
         </div>
         <Field
-          id={name}
+          id={inputId}
           name={name}
-          type="tel"
+          type={type}
           placeholder="802 123 4567"
           className="flex-1 px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent transition-all duration-200 outline-none"
         />

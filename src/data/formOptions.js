@@ -7,7 +7,7 @@ export const validationSchema = Yup.object({
     .email("Invalid email address")
     .required("Email is required"),
   phone: Yup.string().required("Phone number is required"),
-  location: Yup.string().required("Location is required"),
+  homeAddress: Yup.string().required("Home Address is required"),
   city: Yup.string().required("City is required"),
   stateProvince: Yup.string().required("State/Province is required"),
   birthday: Yup.date().required("Birthday is required"),
@@ -19,7 +19,7 @@ export const validationSchema = Yup.object({
   hearAboutTGGC: Yup.string().required("This field is required"),
   preferredTimeOfCall: Yup.string().required("This field is required"),
   prayerRequest: Yup.string(),
-  profession: Yup.string(),
+  occupation: Yup.string().required("This field is required"),
   interests: Yup.string(),
   otherInterests: Yup.string(),
   serviceUnit: Yup.string().required("Service unit is required"),
@@ -36,6 +36,11 @@ export const validationSchema = Yup.object({
   emergencyContactPhone: Yup.string().required(
     "Emergency contact phone is required",
   ),
+  bornAgain: Yup.string().required("This field is required"),
+  speakInTongues: Yup.string().required("This field is required"),
+  previousChurch: Yup.string().required("This field is required"),
+  whichChurch: Yup.string(),
+  getInvolved: Yup.string().required("This field is required"),
 });
 
 export const ageDemographyOptions = [
@@ -52,6 +57,7 @@ export const maritalStatusOptions = [
   { value: "", label: "Select marital status" },
   { value: "single", label: "Single" },
   { value: "married", label: "Married" },
+  { value: "engaged", label: "Engaged" },
   { value: "divorced", label: "Divorced" },
   { value: "widowed", label: "Widowed" },
 ];

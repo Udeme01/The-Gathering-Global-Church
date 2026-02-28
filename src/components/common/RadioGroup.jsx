@@ -1,11 +1,14 @@
 import React from "react";
 import { Field, ErrorMessage } from "formik";
 
-const RadioGroup = ({ label, name, options, required = false }) => {
+const RadioGroup = ({ label, id, name, options, required = false }) => {
   return (
     <div className="space-y-3">
-      <label className="block text-sm font-semibold text-neutral-900">
-        {label} {required && <span className="text-red-600">*</span>}
+      <label
+        htmlFor={id}
+        className="block text-sm font-semibold text-neutral-900"
+      >
+        {label} {required && <span className="text-purple-600">*</span>}
       </label>
       <div className="space-y-3">
         {options.map((option) => (
@@ -27,7 +30,7 @@ const RadioGroup = ({ label, name, options, required = false }) => {
       </div>
       <ErrorMessage
         name={name}
-        component="div"
+        component="div"     
         className="text-sm text-red-600 mt-1"
       />
     </div>

@@ -3,21 +3,24 @@ import { Field, ErrorMessage } from "formik";
 
 const TextInput = ({
   label,
+  id,
   name,
   type = "text",
   placeholder,
   required = false,
 }) => {
+  const inputId = id || name;
+
   return (
     <div className="space-y-2">
       <label
-        htmlFor={name}
+        htmlFor={inputId}
         className="block text-sm font-semibold text-neutral-900"
       >
         {label} {required && <span className="text-purple-600">*</span>}
       </label>
       <Field
-        id={name}
+        id={inputId}
         name={name}
         type={type}
         placeholder={placeholder}

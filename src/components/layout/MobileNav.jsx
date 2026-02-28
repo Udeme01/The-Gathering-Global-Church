@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { navigations } from "../../data/navigation";
-import { NavLink } from "react-router";
+import { Link, NavLink } from "react-router";
 import { socialHandles } from "../../data/socialsHandles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
@@ -26,11 +26,11 @@ const MobileNav = ({ isOpen, isClose }) => {
     setOpenDropdown(openDropdown === anchorName ? null : anchorName);
   };
 
-  const handleOnClose = () => {
-    if (isClose) {
-      isClose();
-    }
-  };
+  // const handleOnClose = () => {
+  //   if (isClose) {
+  //     isClose();
+  //   }
+  // };
 
   return (
     <>
@@ -38,16 +38,16 @@ const MobileNav = ({ isOpen, isClose }) => {
         className={`lg:hidden bg-black text-white fixed top-0 bottom-0 left-0 right-0 transition-transform duration-500 ease-in-out z-40 overflow-y-auto ${isOpen ? "translate-x-0" : "translate-x-full"}`}
       >
         <section className="w-[90%] sm:w-[85%] mx-auto">
-          <NavLink
+          <Link
             to={`/`}
-            onClick={handleOnClose}
+            // onClick={handleOnClose}
             className="inline-block py-8.5 w-fit"
           >
             <img
               src="/images/tggc_logo.webp"
               alt="the gathering global church logo"
             />
-          </NavLink>
+          </Link>
           {/* mobile navigation */}
           <nav className="mt-">
             <ul className="text-3xl flex flex-col">
@@ -73,7 +73,7 @@ const MobileNav = ({ isOpen, isClose }) => {
                       ) : (
                         <NavLink
                           to={anchorLink}
-                          onClick={handleOnClose}
+                          // onClick={handleOnClose}
                           className={({ isActive }) =>
                             `flex w-fit items-center gap-2 text-[20px] ${
                               isActive ? "text-white" : ""
@@ -96,7 +96,7 @@ const MobileNav = ({ isOpen, isClose }) => {
                           >
                             <NavLink
                               to={item.nestedLink}
-                              onClick={handleOnClose}
+                              // onClick={handleOnClose}
                               className={({ isActive }) =>
                                 `text-[18px] ${isActive ? "text-white" : ""}`
                               }
