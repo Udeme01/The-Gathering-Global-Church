@@ -35,21 +35,11 @@ const MobileNav = ({ isOpen, isClose }) => {
   return (
     <>
       <section
-        className={`lg:hidden bg-black text-white fixed top-0 bottom-0 left-0 right-0 transition-transform duration-500 ease-in-out z-40 overflow-y-auto ${isOpen ? "translate-x-0" : "translate-x-full"}`}
+        className={`lg:hidden bg-black text-white fixed top-0 bottom-0 left-0 right-0 transition-transform duration-500 ease-in-out z-40 overflow-y-auto py-10 ${isOpen ? "translate-x-0" : "translate-x-full"}`}
       >
-        <section className="w-[90%] sm:w-[85%] mx-auto">
-          <Link
-            to={`/`}
-            // onClick={handleOnClose}
-            className="inline-block py-8.5 w-fit"
-          >
-            <img
-              src="/images/tggc_logo.webp"
-              alt="the gathering global church logo"
-            />
-          </Link>
+        <section className="w-[90%] sm:w-[85%] mx-auto min-h-screen flex flex-col items-stretch justify-center">
           {/* mobile navigation */}
-          <nav className="mt-">
+          <nav className="min-h-auto">
             <ul className="text-3xl flex flex-col">
               {navigations.map((navigation) => {
                 const { anchorName, anchorLink, nested } = navigation;
@@ -113,11 +103,11 @@ const MobileNav = ({ isOpen, isClose }) => {
             </ul>
           </nav>
           {/* join us */}
-          <section className="mt-10 pb-8 bg-linear-to-br from-purple-900 via-purple-950 to-black rounded-2xl py-8 px-4 shadow-2xl border border-purple-800/30">
+          <section className="mt-10 pb-8 bg-linear-to-br from-white via-white/30 to-black/10 rounded-2xl py-8 px-4 shadow-2xl border border-purple-800/30">
             <h1
               className="text-6xl font-bold text-center px-3 mb-2"
               style={{
-                WebkitTextStroke: "2px white",
+                WebkitTextStroke: "2px purple",
                 WebkitTextFillColor: "transparent",
                 paintOrder: "stroke fill",
               }}
@@ -127,10 +117,10 @@ const MobileNav = ({ isOpen, isClose }) => {
 
             <div className="flex mt-10 justify-around px-4">
               <p className="text-2xl font-bold">
-                Sunday: <span className="text-purple-300">9AM</span>
+                Sunday: <span className="text-purple-500">9AM</span>
               </p>
               <p className="text-2xl font-bold">
-                Thursday: <span className="text-purple-300">6PM</span>
+                Thursday: <span className="text-purple-400">6PM</span>
               </p>
             </div>
           </section>
@@ -148,7 +138,7 @@ const MobileNav = ({ isOpen, isClose }) => {
                     href={socialHandle.href}
                     target={socialHandle.target}
                     rel={socialHandle.rel}
-                    className="bg-purple-900/50 hover:bg-purple-800 rounded-full transition-all duration-500 ease-in-out hover:scale-110 p-3"
+                    className="bg-white text-black hover:bg-lavenderDarkest rounded-full transition-all duration-500 ease-in-out hover:scale-110 p-3"
                     aria-label={socialHandle.ariaLabel}
                   >
                     <FontAwesomeIcon icon={socialHandle.icon} size="lg" />

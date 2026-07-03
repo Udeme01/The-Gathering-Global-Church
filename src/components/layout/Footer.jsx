@@ -119,12 +119,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
-// : (
-//                     <NavLink
-//                       to={anchorLink}
-//                       className="hover:text-purple-300 text-xl"
-//                     >
-//                       {anchorName}
-//                     </NavLink>
-//                   )
